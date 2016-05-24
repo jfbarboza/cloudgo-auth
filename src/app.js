@@ -1,25 +1,22 @@
+'use strict'
+
 var express = require('express');
+var router = require('body-parser');
+var router = require('./api/router');
+
 var app = express();
 
-//MOCKING DATA
-
-var data = require('../mock/apps.json');
-
 app.use(express.static('../public'));
+
+require('./database.js');
+
+app.use('/', express.static('public'));
 
 app.get('/', function (req, res) {
    res.send('CloudGo Auth');
 })
 
-app.get('/auth/:app_name/', function (req, res) {
-
-   // Prepare output in JSON format
-   response = {
-       app_name:data,
-   };
-   console.log(response);
-   res.end(JSON.stringify(response));
-})
+app.use('/api', router);
 
 var server = app.listen(8081, function () {
 

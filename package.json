@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A RESTful API dedicated to authentication for Apps",
   "main": "src/app.js",
-  "repository":{
-	  "type":"git",
-	  "url":"git@github.com:jfbarboza/cloudgo-auth.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jfbarboza/cloudgo-auth.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +16,7 @@
     "body-parser": "^1.15.1",
     "cookie-parser": "^1.4.2",
     "express": "^4.13.4",
+    "mongoose": "^4.4.19",
     "multer": "^1.1.0"
   }
 }
